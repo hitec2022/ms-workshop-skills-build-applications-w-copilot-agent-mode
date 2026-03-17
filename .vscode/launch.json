@@ -3,18 +3,14 @@
   "configurations": [
     {
       "name": "Launch Django Backend",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
-      "program": "${workspaceFolder}/octofit-tracker/backend/manage.py",
+      "program": "${workspaceFolder}/octofit-tracker/backend/octofit_tracker/manage.py",
+      "cwd": "${workspaceFolder}/octofit-tracker/backend/octofit_tracker",
       "args": ["runserver", "0.0.0.0:8000"],
       "django": true,
       "justMyCode": true,
-      "python": "${workspaceFolder}/octofit-tracker/backend/venv/bin/python",
-      "env": {
-        "PYTHONPATH": "${workspaceFolder}/octofit-tracker/backend/venv/bin/python",
-        "VIRTUAL_ENV": "${workspaceFolder}/octofit-tracker/backend/venv",
-        "PATH": "${workspaceFolder}/octofit-tracker/backend/venv/bin:${env:PATH}"
-      }
+      "python": "${workspaceFolder}/octofit-tracker/backend/venv/bin/python"
     },
     {
       "name": "Launch React Frontend",
@@ -24,7 +20,6 @@
       "cwd": "${workspaceFolder}/octofit-tracker/frontend",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["start"],
-      "port": 3000,
       "env": {
         "REACT_APP_CODESPACE_NAME": "${env:CODESPACE_NAME}"
       }
